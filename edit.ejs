@@ -1,0 +1,43 @@
+<%- include('partials/header.ejs'); -%>
+
+<div class="container">
+  <div class="row align-items-center g-lg-5 py-5">
+    <div class="col-lg-7 text-center text-lg-start">
+      <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Following is the form to edit the item</h1>
+      <p class="col-lg-10 fs-4">Kindly enter all the details correctly (Note Location Name should always be in capital letters)</p>
+      <div>
+        <img src="https://media.licdn.com/dms/image/C4E0DAQFxPCgeIAK_4w/learning-public-crop_288_512/0/1604701167740?e=2147483647&v=beta&t=SuATvPllPvqGWUf1aW_nAF7UxRvQzqGceJh2UWIkchY" />
+      </div>
+    </div>
+    <div class="col-md-10 mx-auto col-lg-5">
+      <% if (successMessage) { %>
+        <div class="alert alert-success" role="alert">
+          <%= successMessage %>
+        </div>
+      <% } %>
+      <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" action="/update" method="POST">
+        <div class="form-floating mb-3">
+          <input name="updName" class="form-control" id="floatingInput" placeholder="Enter item Name" value="<%= kitems.iname %>">
+          <label for="floatingInput">Item Name</label>
+        </div>
+
+        <input name = "inputid" hidden="true" value="<%= kitems.id %>" />
+        <div class="form-floating mb-3">
+          <input name="updLocn" class="form-control" id="floatingInput" placeholder="Enter Storage Location" value="<%= kitems.storage_location %>">
+          <label for="floatingInput">Storage Location</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="number" name="updQty" class="form-control" id="floatingInput" placeholder="Enter the quantity" value="<%= kitems.itm_qty %>">
+          <label for="floatingInput">Quantity</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input name="updEmp" class="form-control" id="floatingPassword" placeholder="Employee ID" value="<%= kitems.emp_id %>">
+          <label for="floatingPassword">Employee ID</label>
+        </div>
+        <button class="w-100 btn btn-lg btn-outline-success" type="submit">Update</button>
+        <hr class="my-4">
+        <small class="text-body-secondary">By clicking Update, you agree to the terms of use.</small>
+      </form>
+    </div>
+  </div>
+</div>

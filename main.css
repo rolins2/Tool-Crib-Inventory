@@ -1,0 +1,18 @@
+
+.white-text {
+    color: white;
+}
+
+.bg-highlight {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    padding: 10px; /* Adds some space around the text */
+    border-radius: 5px; /* Optional: rounds the corners of the background */
+}
+
+.left-corner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+  }
+  
